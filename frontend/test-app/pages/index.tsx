@@ -37,8 +37,8 @@ export default function Home() {
 
   const handleSubmit = async () => {
     // console.log("forms", formValues)
-    try {
-      const orderResponse = await fetch('http://localhost:1337/api/v1/createOrder', {
+    try { 
+      const orderResponse = await fetch('http://localhost:1337/api/v1/createOrder/7868668787', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -61,7 +61,9 @@ export default function Home() {
       const orderData = await orderResponse.json();
       const orderId = orderData.data.orderId;
       // console.log("orderId", orderId)
-      const orderDetailsResponse = await fetch(`http://localhost:1337/api/v1/getOrder`, {
+
+
+      const orderDetailsResponse = await fetch(`http://localhost:1337/api/v1/getOrder/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -78,6 +80,8 @@ export default function Home() {
     } catch (error: any) {
       console.error('Error:', error.message);
     }
+
+
     setFormValues({
       billingFirstName: '',
       billingLastName: '',
@@ -114,6 +118,7 @@ export default function Home() {
               required
             />
           </div>
+
           <div>
             <label className={`${styles.label}`} htmlFor="billingLastName">
               Last Name
@@ -128,6 +133,7 @@ export default function Home() {
               required
             />
           </div>
+
           <div>
             <label className={`${styles.label}`} htmlFor="billingPhone">
               Phone
@@ -142,6 +148,7 @@ export default function Home() {
               required
             />
           </div>
+
           <div>
             <label className={`${styles.label}`} htmlFor="billingEmail">
               Email
@@ -170,9 +177,7 @@ export default function Home() {
               Billing is the same as shipping
             </label>
           </div>
-
           <div>
-
           </div>
 
           {!billingSameAsShipping && (

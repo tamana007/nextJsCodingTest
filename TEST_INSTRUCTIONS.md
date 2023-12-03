@@ -30,7 +30,8 @@ information is submitted to the backend REST API.
 2. You will find that there exists a `backend` project in the root directory.
    You will create a Next.js 13 app that will reside in the same directory as the
    backend project with the following configuration:
-   - Name the project `frontend`.
+   - Name the project `frontend`
+   .
    - Use TypeScript.
    - Use ESLint.
    - Do not use Tailwind CSS.

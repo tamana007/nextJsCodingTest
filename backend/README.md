@@ -94,7 +94,6 @@ Although the shipping information should be included if `billingSameAsShipping`
 is true, no validation for it exists for simplicity's sake.
 
 #### Request
-
 Method: `POST`
 
 ```json
